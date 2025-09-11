@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, white, #fef2f2);
+  padding: 24px;
+  text-align: center;
+}
+
+.error-icon {
+  width: 64px;
+  height: 64px;
+  color: #dc2626; /* red-600 */
+  margin-bottom: 16px;
+}
+
+.error-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: bold;
+  color: #dc2626;
+  margin-bottom: 8px;
+}
+
+.error-message {
+  color: #4b5563; /* gray-600 */
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.error-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: #2563eb; /* blue-600 */
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8; /* blue-700 */
+}
+
+.btn-outline {
+  background: white;
+  border: 1px solid #d1d5db;
+  color: #374151;
+}
+
+.btn-outline:hover {
+  background: #f9fafb;
+}
