@@ -1,7 +1,8 @@
 import { getQuestionsResponse } from "@/lib/types/questions";
-import { error } from "console";
 import { getToken } from "next-auth/jwt";
 import { NextRequest, NextResponse } from "next/server";
+
+export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
   try {
@@ -43,5 +44,11 @@ export async function GET(request: NextRequest) {
     //return data in NextResponse
     const payload: getQuestionsResponse = await response.json();
     return NextResponse.json(payload);
-  } catch (error) {}
+  } catch (error) {
+    console.error("Error in questions API route:", error);
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 }
+    );
+  }
 }

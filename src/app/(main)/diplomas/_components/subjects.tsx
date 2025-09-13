@@ -5,6 +5,7 @@ import { useSubjects } from "../../_hooks/use-subject";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ExamQuestionSkeleton } from "../../_components/skeleton";
+import { GetSubjectsResponse } from "@/lib/types/subject";
 
 // ==== DYNAMIC IMPORTS ====
 // Lazy loading scroll
@@ -25,7 +26,9 @@ export default function Subjects() {
     useSubjects();
 
   // ==== VARIABLE =====
-  const subjects = payload?.pages?.flatMap((p: any) => p.subjects) ?? [];
+  // const subjects = payload?.pages?.flatMap((p: any) => p.subjects) ?? [];
+  const subjects =
+    payload?.pages?.flatMap((p: GetSubjectsResponse) => p.subjects) ?? [];
 
   // Loading
   if (isLoading) {

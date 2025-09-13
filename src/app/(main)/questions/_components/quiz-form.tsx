@@ -56,9 +56,9 @@ export default function QuizForm({ examId }: QuizFormProps) {
 
   // ==== MUTATION ====
   // Custom hook for handling quiz submission and result fetching
-  const { mutate, resultData, isError, isSuccess, isPending } = useResult();
+  const { mutate, resultData, isSuccess, isPending } = useResult();
   // Custom hook to fetch questions for the specific exam
-  const { payload, isLoading, error } = useQuestions(examId);
+  const { payload, error } = useQuestions(examId);
 
   //  ==== VARIABLE ====
   const questions: Question[] = payload?.questions ?? [];
@@ -296,7 +296,7 @@ export default function QuizForm({ examId }: QuizFormProps) {
               colorsTime={[TOTAL_SECONDS, 60, 0]} // Color change thresholds
               onComplete={() => {
                 handleTimeUp(); // Auto-submit when time runs out
-                return { shouldRepeat: false, delay: 0 } as any;
+                return { shouldRepeat: false, delay: 0 };
               }}
               size={72}
             >

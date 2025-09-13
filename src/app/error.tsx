@@ -9,7 +9,7 @@ type ErrorProps = {
   reset: () => void;
 };
 
-export default function Error({ error, reset }: ErrorProps) {
+export default function Error({ reset }: ErrorProps) {
   return (
     <main>
       <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-white to-red-50 p-6">
@@ -21,7 +21,7 @@ export default function Error({ error, reset }: ErrorProps) {
           Something went wrong!
         </h1>
         <p className="text-gray-600 mb-6 text-center">
-          We’re sorry, an unexpected error occurred. <br />
+          We&apos;re sorry, an unexpected error occurred. <br />
           Please try again.
         </p>
 

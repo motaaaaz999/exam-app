@@ -72,7 +72,7 @@ export default function ResultView({ result }: Props) {
           {/* ===== RIGHT SECTION: DETAILED QUESTION BREAKDOWN ===== */}
           <div className="overflow-auto flex-1 pt-4  bg-white border border-1">
             {/* Wrong Questions */}
-            {result.WrongQuestions.map((question, index) => (
+            {result.WrongQuestions.map((question) => (
               <Card key={question.QID} className="border-none shadow-none">
                 <CardContent className="">
                   {/* Questions */}
@@ -114,7 +114,7 @@ export default function ResultView({ result }: Props) {
             ))}
 
             {/* Correct Questions */}
-            {result.correctQuestions.map((question, index) => (
+            {result.correctQuestions.map((question) => (
               <Card key={question.QID} className="border border-gray-200">
                 <CardContent className="p-6">
                   <h3 className="text-blue-600  font-medium mb-4 text-lg">

@@ -28,7 +28,7 @@ export default function AppBreadcrumb() {
       : segments;
 
     let path = "";
-    return cleanedSegments.map((segment, i) => {
+    return cleanedSegments.map((segment) => {
       path += `/${segment}`;
       const name = segment.charAt(0).toUpperCase() + segment.slice(1);
       return {

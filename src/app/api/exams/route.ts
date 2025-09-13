@@ -2,6 +2,8 @@ import { getExamsResponse } from "@/lib/types/exams";
 import { getToken } from "next-auth/jwt";
 import { NextRequest, NextResponse } from "next/server";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(request: NextRequest) {
   try {
     // 1- get token from cookie

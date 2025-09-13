@@ -36,12 +36,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 export default function ProfileForm() {
   // ==== MUTATION ====
   const { isPending, mutate } = useProfile();
-  const {
-    error,
-    isSuccess: isSuccessDelete,
-    isPending: isLoading,
-    mutate: deleteAccount,
-  } = useDelete();
+  const { isPending: isLoading, mutate: deleteAccount } = useDelete();
 
   //  ==== HOOKS ====
   const { toast } = useToast();
@@ -66,12 +61,12 @@ export default function ProfileForm() {
    * @param {T} obj - Object with potentially empty string or undefined values
    * @returns {Partial<T>} Object with only non-empty values
    */
-  function removeEmptyFields<T extends Record<string, any>>(
+  function removeEmptyFields<T extends Record<string, unknown>>(
     obj: T
   ): Partial<T> {
     return Object.fromEntries(
       Object.entries(obj).filter(
-        ([_, value]) => value !== "" && value !== undefined
+        ([, value]) => value !== "" && value !== undefined
       )
     ) as Partial<T>;
   }

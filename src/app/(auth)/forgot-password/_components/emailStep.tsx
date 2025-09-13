@@ -70,7 +70,7 @@ export default function EmailStep({ setStep, setEmail }: Props) {
 
                 {/* Description */}
                 <p className="text-gray-500 text-base mb-10">
-                  Don't worry, we will help you recover your account.
+                  {`Don't worry, we will help you recover your account.`}
                 </p>
               </header>
 
@@ -127,7 +127,7 @@ export default function EmailStep({ setStep, setEmail }: Props) {
 
               {/* Register Navigation */}
               <div className="text-gray-500 text-center mt-9">
-                Don't have an account?{" "}
+                {`Don't have an account?`}{" "}
                 <Link href="/register">
                   <span className="text-blue-600">Create yours</span>
                 </Link>

@@ -33,7 +33,7 @@ export default function VerifyStep({ setStep, email }: Props) {
   const [timeLeft, setTimeLeft] = useState(60);
 
   // ==== MUTATION ====
-  const { error, isPending, isSuccess, mutate, isError } = useVerify();
+  const { error, isPending, mutate, isError } = useVerify();
   const { mutate: mutateEmail } = useEmail();
   const { toast } = useToast();
 
@@ -183,7 +183,7 @@ export default function VerifyStep({ setStep, email }: Props) {
                   </>
                 ) : (
                   <p>
-                    Didn't receive the code?{" "}
+                    {`Didn't receive the code?`}
                     <span
                       onClick={() => handleResendOTP()}
                       className="text-blue-600 ml-2 cursor-pointer"
@@ -222,7 +222,7 @@ export default function VerifyStep({ setStep, email }: Props) {
 
               {/* Register Navigation */}
               <p className="text-gray-500 text-center mt-9">
-                Don't have an account?{" "}
+                {`Don't have an account?`}{" "}
                 <Link href={"/register"}>
                   <span className="text-blue-600">Create yours</span>
                 </Link>

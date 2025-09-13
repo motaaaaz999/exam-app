@@ -49,11 +49,8 @@ export default function Exams({ subjectId }: ExamsProps) {
         <div className="bg-white w-full p-6  flex-1 ">
           {/* Exam Details */}
           {payload?.exams.map((exam) => (
-            <Link href={`/questions/${exam._id}`}>
-              <div
-                key={exam._id}
-                className="flex  flex-row justify-between items-center p-4 bg-blue-50 font-mono"
-              >
+            <Link key={exam._id} href={`/questions/${exam._id}`}>
+              <div className="flex  flex-row justify-between items-center p-4 bg-blue-50 font-mono">
                 {/* left side */}
                 <div className=" text-[12px] sm:text-base  flex flex-col ">
                   {/* Quiz name */}
