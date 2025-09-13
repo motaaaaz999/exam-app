@@ -7,7 +7,6 @@ import { questionSchema } from "./question.schema";
 //   questions: z.array(questionSchema),
 // });
 
-// الامتحان كله
 export const examSchema = z.object({
   subjectId: z.string().nonempty("Subject ID is required"), // 🟢 param
   title: z.string().nonempty("Exam title is required"),
