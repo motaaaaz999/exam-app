@@ -32,9 +32,24 @@ export const changePassword = async (
       throw payload.message || "Somthing Went Wrong";
     }
 
+    // Clear old tokens
+    cookies().delete("accessToken");
+    cookies().delete("next-auth.session-token");
+    cookies().delete("__Secure-next-auth.session-token");
+
     // store the new token after changing password
-    cookies().set("next-auth.session-token", payload.token, {
+    // cookies().set("next-auth.session-token", payload.token, {
+    //   httpOnly: true,
+    // });
+
+    // cookies().set("__Secure-next-auth.session-token", payload.token, {
+    //   httpOnly: true,
+    // });
+
+    cookies().set("__Secure-next-auth.session-token", payload.token, {
       httpOnly: true,
+      secure: process.env.NODE_ENV === "production", // HTTPS only in production
+      path: "/", // ensure access to the cookie in all pages/routes
     });
 
     return payload;
